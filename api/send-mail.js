@@ -68,7 +68,7 @@ Referral: ${referral || "N/A"}`;
 
     const utmParams =
       "?utm_source=website&utm_medium=form&utm_campaign=lead";
-    res.setHeader("Location", "/thank-you.html" + utmParams);
+    res.setHeader("Location", "/thankyou.html" + utmParams);
     return res.status(302).end();
   } catch (e) {
     console.error("Mail send error", e);
