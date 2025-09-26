@@ -30,7 +30,7 @@ export default async function handler(req, res) {
     console.error("Body parse error", err);
     res.setHeader(
       "Location",
-      "/thank-you.html?status=bad_body&utm_source=website&utm_medium=form&utm_campaign=lead"
+      "/thankyou.html?status=bad_body&utm_source=website&utm_medium=form&utm_campaign=lead"
     );
     return res.status(302).end();
   }
@@ -39,7 +39,7 @@ export default async function handler(req, res) {
   if (website) {
     res.setHeader(
       "Location",
-      "/thank-you.html?utm_source=website&utm_medium=form&utm_campaign=lead"
+      "/thankyou.html?utm_source=website&utm_medium=form&utm_campaign=lead"
     );
     return res.status(302).end();
   }
@@ -52,7 +52,7 @@ export default async function handler(req, res) {
 
   try {
     const from = `SMART KIDS <no-reply@${req.headers.host || "example.com"}>`;
-    const to = "kingswayrepair@gmail.com"; // change to your recipient
+    const to = "outreachcampaigncanada@gmail.com"; // change to your recipient
     const subject = `New Lead — ${parentName}`;
     const text = `Parent Name: ${parentName}
 Phone: ${phone}
@@ -74,7 +74,7 @@ Referral: ${referral || "N/A"}`;
     console.error("Mail send error", e);
     res.setHeader(
       "Location",
-      "/thank-you.html?status=error&utm_source=website&utm_medium=form&utm_campaign=lead"
+      "/thankyou.html?status=error&utm_source=website&utm_medium=form&utm_campaign=lead"
     );
     return res.status(302).end();
   }
